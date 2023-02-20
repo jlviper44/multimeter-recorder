@@ -1,0 +1,178 @@
+﻿<Window 
+  x:Class="multimeter.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:local="clr-namespace:multimeter"
+	xmlns:controls="clr-namespace:multimeter_recorder"
+  xmlns:ui="http://schemas.modernwpf.com/2019"
+  ui:WindowHelper.UseModernWindowStyle="True"
+  mc:Ignorable="d"
+  Title="Multimeter Recorder" 
+	Height="363" 
+	Width="600"
+  ResizeMode="NoResize"
+>
+	<Canvas Background="#003366">
+		<Border BorderThickness="0" Background="#cce5ff" Padding="5" CornerRadius="7" Height="310" Width="580" Canvas.Left="10" Canvas.Top="10">
+			<Canvas>
+				<Button 
+					Style="{StaticResource AccentButtonStyle}" 
+					Content="New File Name" 
+					HorizontalAlignment="Stretch" 
+					VerticalAlignment="Stretch"
+					Height="32" Width="195"
+					Click="AddNewDataSet"
+				/>
+				<TextBox
+					Background="White"
+					Foreground="Black"
+					Canvas.Left="200" Width="370"
+					Name="DataNameInput" 
+				/>
+				<controls:ComPortTemplate Canvas.Top="71"  Width="570" x:Name="ComPort1"/>
+				<controls:ComPortTemplate Canvas.Top="109" Width="570" x:Name="ComPort2"/>
+				<controls:ComPortTemplate Canvas.Top="147" Width="570" x:Name="ComPort3"/>
+				<controls:ComPortTemplate Canvas.Top="186" Width="570" x:Name="ComPort4"/>
+
+				<Label
+					Foreground="Black" 
+					Background="WhiteSmoke" 
+					Content="Duration:" 
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="30"
+					VerticalAlignment="Top" 
+					Width="90" Canvas.Top="228"
+				/>
+				<TextBox
+					Foreground="Black" 
+					Background="WhiteSmoke"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="30"
+					VerticalAlignment="Top" 
+					Width="90" Canvas.Top="228" Canvas.Left="95"
+					PreviewTextInput="NumberValidationTextBox"
+					Name="DurationValue"
+					Text="1"
+				/>
+				<ComboBox
+					Foreground="Black" 
+					Background="WhiteSmoke"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="32" Width="90"
+					VerticalAlignment="Top" 
+					Canvas.Top="228" Canvas.Left="190"
+					Name="DurationType"
+				/>
+				<Label
+					Foreground="Black" 
+					Background="WhiteSmoke" 
+					Content="Sample Rate:" 
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="32"
+					VerticalAlignment="Top" 
+					Width="90" Canvas.Top="228" Canvas.Left="285"
+				/>
+				<TextBox
+					Foreground="Black" 
+					Background="WhiteSmoke"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="30" Width="90"
+					VerticalAlignment="Top" 
+					Canvas.Top="228" Canvas.Left="380"
+					PreviewTextInput="NumberValidationTextBox"
+					Text="1"
+					Name="SampleRateValue"
+				/>
+				<ComboBox
+					Foreground="Black" 
+					Background="WhiteSmoke"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="32" Width="90" 
+					VerticalAlignment="Top" 
+					Canvas.Top="228" Canvas.Left="475"
+					Name="SampleRateType"
+				/>
+				<Button
+					Foreground="White" 
+					Background="Red"
+					Content="Stop"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="32"
+					VerticalAlignment="Top" 
+					Width="90" Canvas.Top="267"
+					Name="StopButton" 
+					Click="StopButton_Click"
+				/>
+				<Button
+					Style="{StaticResource AccentButtonStyle}" 
+					Content="Start"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="32"
+					VerticalAlignment="Top" 
+					Width="376" Canvas.Top="267" Canvas.Left="95"
+					Click="StartRecording"
+					Name="StartButton"
+				/>
+				<Button
+					Style="{StaticResource AccentButtonStyle}" 
+					Content="View Data"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="32"
+					VerticalAlignment="Top" 
+					Width="95" Canvas.Top="267" Canvas.Left="475"
+					Click="ViewDataButton"
+				/>
+				<Button
+					Style="{StaticResource AccentButtonStyle}" 
+					Content="Refresh"
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="30"
+					VerticalAlignment="Top" 
+					Width="95" Canvas.Top="37" Canvas.Left="475"
+					Click="RefreshCollections"
+				/>
+				<ComboBox 
+					Height="30"
+					Width="270"
+					Background="White"
+					Foreground="Black" 
+					Canvas.Left="200" Canvas.Top="37"
+					Name="DataSetsComboBox" 
+				/>
+				<Label
+					Foreground="Black" 
+					Background="WhiteSmoke" 
+					Content="Select File Name:" 
+					HorizontalContentAlignment="Center" 
+					VerticalContentAlignment="Center" 
+					HorizontalAlignment="Left" 
+					Height="30"
+					VerticalAlignment="Top" 
+					Width="195" Canvas.Top="37"
+				/>
+			</Canvas>
+		</Border>
+	</Canvas>
+</Window>

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="multimeter_recorder.ComPortTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:multimeter_recorder"
+             mc:Ignorable="d" 
+             d:DesignHeight="47" d:DesignWidth="570">
+	<Grid Background="#cce5ff">
+
+		<Label  Margin="5,11,399,3.667" Content="Com Port:" Foreground="Black"></Label>
+		<ComboBox Margin="75,3,0,11.667" Name="ComPortComboBox" VerticalAlignment="Stretch" Width="110" Background="White" Foreground="Black"></ComboBox>
+		<Button Style="{StaticResource AccentButtonStyle}" Margin="190,2,0,10.667" Content="Refresh" Click="RefreshPorts" Height="34" Width="90" Name="RefreshBtn"></Button>
+
+		<Label  Margin="295,11,100,-6.333" Content="REF:" Foreground="Black"/>
+		<TextBox Margin="331,4,5,10.667" Name="DataNameTextBox" Background="White" Foreground="Black"></TextBox>
+
+	</Grid>
+</UserControl>
